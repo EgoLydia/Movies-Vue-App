@@ -10,7 +10,7 @@
       </div>
       <div class="details">
         <h5>{{ movie.vote_average.toFixed(1) }} Rating</h5>
-        <h5>{{ fullDate(movie.release_date || movie.first_air_date) }}</h5>
+        <h5>{{ movie.release_date || movie.first_air_date }}</h5>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 import { IMG_URL } from "./../config.js";
-import { getFullDate, getFullYear } from "../utils/dateUtils";
+import { getFullYear } from "../utils/dateUtils";
 
 export default {
   props: {
@@ -35,9 +35,9 @@ export default {
     getYear(date) {
       return getFullYear(date);
     },
-    fullDate(date) {
-      return getFullDate(date);
-    },
+    // fullDate(date) {
+    //   return getFullDate(date);
+    // },
   },
 };
 </script>
